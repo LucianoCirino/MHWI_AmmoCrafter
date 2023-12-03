@@ -15,7 +15,7 @@ To use `MHWI_AmmoCrafter`, define the craft item menu locations and then configu
 ![Ammocrafterconfig](https://github.com/LucianoCirino/MHWI_AmmoCrafter/assets/112517630/add0a3e0-221a-47dd-a73f-792d235002c2)
 
 ## Requirements
-- AutoHotkey v2.0
+- [AutoHotkey v2.0](https://www.autohotkey.com/)
 - Monster Hunter World Iceborne v15.21
 - PS4 Controller or Keyboard & Mouse
 
