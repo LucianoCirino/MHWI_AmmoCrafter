@@ -12,6 +12,8 @@
 ## Usage
 To use `MHWI_AmmoCrafter`, define the craft item menu locations and then configure the auto-craft condition by setting a desired ammo type's threshold limit. The tool checks for these conditions and crafts ammo accordingly during gameplay.
 
+![Ammocrafterconfig](https://github.com/LucianoCirino/MHWI_AmmoCrafter/assets/112517630/add0a3e0-221a-47dd-a73f-792d235002c2)
+
 ## Requirements
 - AutoHotkey v2.0
 - Monster Hunter World Iceborne v15.21
