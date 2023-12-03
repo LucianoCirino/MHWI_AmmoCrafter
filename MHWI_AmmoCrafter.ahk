@@ -27,10 +27,10 @@ SetTitleMatchMode 2  ; Avoids the need to specify the full path of files.
 EXIT_SCRIPT_HOTKEY := "F10"
 
 ; Menu craft locations
-global F_MENU := "F4"   ; Menu where craft items are located. ["-","F1","F2","F3","F4"]
-global SLOT_1 := "4"    ; Slot of craft item in F_menu . ["","1","2","3","4","5","6","7","8"]
-global SLOT_2 := "5"    ; Slot of craft item in F_menu . ["","1","2","3","4","5","6","7","8"]
-global SLOT_3 := "6"    ; Slot of craft item in F_menu . ["","1","2","3","4","5","6","7","8"]
+global F_MENU := "F4"   ; Menu where craft items are located. ["F1","F2","F3","F4"]
+global SLOT_1 := ""    ; Slot of craft item in F_menu . ["","1","2","3","4","5","6","7","8"]
+global SLOT_2 := ""    ; Slot of craft item in F_menu . ["","1","2","3","4","5","6","7","8"]
+global SLOT_3 := ""    ; Slot of craft item in F_menu . ["","1","2","3","4","5","6","7","8"]
 
 ; Condition check frequency (only applicable while holding fire)
 global CHECK_FREQUENCY := 1500 ;ms
