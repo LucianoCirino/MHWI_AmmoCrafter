@@ -20,8 +20,7 @@ To use `MHWI_AmmoCrafter`, define the craft item menu locations and then configu
 - PS4 Controller or Keyboard & Mouse
 
 ## Installation
-Simply download the main branch of this repository (zip).
+Simply download the main branch of this repository (the zip).
 
 ## Configuration
-Open the "MHWI_AmmoCrafter.ahk" file and set your settings under the "Custom Settings" section of the script. You must rerun script to apply changes.
-
+Open the "MHWI_AmmoCrafter.ahk" file and set your settings under the "Custom Settings" section of the script. You must re-run script to apply any changes.
