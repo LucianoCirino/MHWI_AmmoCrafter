@@ -1,6 +1,6 @@
-# MHWI_AmmoCrafter
+# MHWI_AmmoCrafter 
+![AmmoCrafter](https://github.com/LucianoCirino/MHWI_AmmoCrafter/assets/112517630/9e79061b-e767-437c-b135-282802769692)
 
-## Introduction
 `MHWI_AmmoCrafter` is an automatic  ammunition crafting tool for Monster Hunter World.
 
 ## Features
