@@ -6,9 +6,9 @@
     Language: AutoHotkey v2.0 https://www.autohotkey.com/
 
   📡 Description:
-         Auto crafts up to 3 different ammos in a select F-Menu in your inventory.
+         Auto-crafts an ammo in the F-Menu of your inventory.
          Conditions to auto craft are met when a predefined ammo type is below a defined limit.
-         Conditions are checked after you press/click the firing button or at a specified frequency while holding the firing button.
+         Conditions are checked while holding the firing button.
          Works with both PS4 Controller and Keyboard & Mouse.
 
 */
@@ -28,28 +28,23 @@ EXIT_SCRIPT_HOTKEY := "F10"
 
 ; Menu craft locations
 global F_MENU := "F4"   ; Menu where craft items are located. ["F1","F2","F3","F4"]
-global SLOT_1 := ""    ; Slot of craft item in F_menu . ["","1","2","3","4","5","6","7","8"]
-global SLOT_2 := ""    ; Slot of craft item in F_menu . ["","1","2","3","4","5","6","7","8"]
-global SLOT_3 := ""    ; Slot of craft item in F_menu . ["","1","2","3","4","5","6","7","8"]
-
-; Condition check frequency (only applicable while holding fire)
-global CHECK_FREQUENCY := 1500 ;ms
+global SLOT := "2"  ; Slot of craft item in F_menu . ["","1","2","3","4","5","6","7","8"]
 
 ; Crafting conditions
-global AMMO_TO_CHECK := "Spread 3"
-global AMMO_LIMIT := 10
+global AMMO_TO_CHECK := "Dragon Ammo"
+global AMMO_LIMIT := 5
 
 ; Ammo Names (for reference)
-; "Normal 1", "Normal 2", "Normal 3", 
+; "Normal 1", "Normal 2", "Normal 3",
 ; "Pierce 1", "Pierce 2", "Pierce 3", 
 ; "Spread 1", "Spread 2", "Spread 3", 
 ; "Cluster 1", "Cluster 2", "Cluster 3", 
-; "Sticky 1", "Sticky 2", "Sticky 3", 
-; "Slicing", "Flaming", "Water", 
-; "Freeze", "Thunder", "Dragon Ammo", 
-; "Poison 1", "Poison 2", "Paralysis 1", 
-; "Paralysis 2", "Sleep 1", "Sleep 2", 
-; "Exhaust 1", "Exhaust 2", "Recovery 1", 
+; "Sticky 1", "Sticky 2", "Sticky 3",
+; "Slicing", "Flaming", "Water",
+; "Freeze", "Thunder", "Dragon Ammo",
+; "Poison 1", "Poison 2", "Paralysis 1",
+; "Paralysis 2", "Sleep 1", "Sleep 2",
+; "Exhaust 1", "Exhaust 2", "Recovery 1",
 ; "Recovery 2", "Demon", "Armor", "Tranq"
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -58,29 +53,12 @@ Hotkey EXIT_SCRIPT_HOTKEY, ExitScript
 Hotkey "~Joy8", CraftCheck     ; PS4 controller R2, aka shoot button
 Hotkey "~Lbutton", CraftCheck  ; KbM default shoot button 
 
-AmmoCraft(){
-   SendKey(F_MENU)
-
-   QPCsleep(201)
-
-   if IsNumber(SLOT_1)
-      TimedPulse(SLOT_1,17)
-   if IsNumber(SLOT_2)
-      TimedPulse(SLOT_2,17)
-   if IsNumber(SLOT_3)
-      TimedPulse(SLOT_3,17)
-
-   SendKey(F_MENU, "Up")
-
-   QPCsleep(17)
-}
-
 CraftCheck(hotkeyName:=""){
    key := StrReplace(hotkeyName, "~", "")
+   QPCsleep(100)
    While Pressed(key) && CheckWindow(){
-      if GetAmmoCount2(GetAmmoID(AMMO_TO_CHECK)) < AMMO_LIMIT
-         AmmoCraft()
-      PreciseSleep(CHECK_FREQUENCY)
+      if ((GetAmmoCount2(GetAmmoID(AMMO_TO_CHECK)) <= AMMO_LIMIT) && IsNumber(SLOT))
+         TimedPulse([F_MENU, SLOT],3, offDelay:=3)
    }
 }
 
