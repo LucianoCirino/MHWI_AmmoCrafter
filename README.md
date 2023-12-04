@@ -4,9 +4,9 @@
 `MHWI_AmmoCrafter` is an automatic  ammunition crafting tool for Monster Hunter World.
 
 ## Features
-- **Description**: Crafts up to three different ammo types automatically based on a set of conditions.
+- **Description**: Crafts an ammo type automatically based on a set of conditions.
 - **Craft Conditions**: Users select a specific ammo type and set a thresholds limit as the main crafting condition.
-- **Trigger Mechanisms**: Auto-crafting is triggered when the craft conditions are met and after the pressing of the firing button. If holding the firing button, the script will continually run the auto-crafting check at a specified frequency.
+- **Trigger Mechanisms**: Auto-crafting is triggered when the craft conditions are met while holding the firing button.
 - **Compatible Controls**: Supports both PS4 Controller and Keyboard & Mouse setups.
 
 ## Usage
