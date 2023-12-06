@@ -24,7 +24,10 @@ SetTitleMatchMode 2  ; Avoids the need to specify the full path of files.
 #Include lib/Functions.ahk
 
 ;;==============================[Custom Settings]==============================
-EXIT_SCRIPT_HOTKEY := "F10"
+global EXIT_SCRIPT_HOTKEY := "F10"
+
+; Your framerate
+global FPS := 300
 
 ; Menu craft locations
 global F_MENU := "F4"   ; Menu where craft items are located. ["F1","F2","F3","F4"]
@@ -58,7 +61,7 @@ CraftCheck(hotkeyName:=""){
    QPCsleep(100)
    While Pressed(key) && CheckWindow(){
       if ((GetAmmoCount2(GetAmmoID(AMMO_TO_CHECK)) <= AMMO_LIMIT) && IsNumber(SLOT))
-         TimedPulse([F_MENU, SLOT],3, offDelay:=3)
+         TimedPulse([F_MENU, SLOT],Ceil(1000/FPS), offDelay:=Ceil(1000/FPS))
    }
 }
 
